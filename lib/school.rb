@@ -21,9 +21,11 @@ attr_accessor :roster
   end
 
   def sort
-    self.roster.collect do |grade, name|
-      grade.sort
-  end
+    sorted_roster = {}
+    self.roster.each do |grade, names|
+      sorted_roster[grade] = names.sort
+    end
+    sorted_roster
   end
 end
 
